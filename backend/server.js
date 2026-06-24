@@ -239,6 +239,6 @@ app.get("/api/metrics/totals-per-year", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Dashboard API running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Dashboard API running on port ${PORT}`);
 });
