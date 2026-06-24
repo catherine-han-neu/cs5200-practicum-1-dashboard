@@ -1,0 +1,291 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #172033;
+  background: #f4f6f8;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+}
+
+.sidebar {
+  width: 270px;
+  flex-shrink: 0;
+  background: #111827;
+  color: white;
+  padding: 24px 18px;
+}
+
+.sidebar-header {
+  margin-bottom: 28px;
+}
+
+.sidebar-header h1 {
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.sidebar-header p {
+  margin: 0;
+  color: #aeb7c7;
+  font-size: 14px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-button {
+  width: 100%;
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 12px;
+  text-align: left;
+  color: #d7deea;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background: #1f2937;
+}
+
+.nav-button.active {
+  color: white;
+  background: #2563eb;
+}
+
+.main-content {
+  flex: 1;
+  padding: 32px;
+}
+
+.dashboard-page {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 22px;
+}
+
+.page-header h2 {
+  margin: 0 0 6px;
+  font-size: 30px;
+}
+
+.page-header p {
+  margin: 0;
+  color: #637083;
+}
+
+.summary-card,
+.table-card {
+  background: white;
+  border: 1px solid #e1e6ef;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+}
+
+.summary-card {
+  padding: 22px 24px;
+  margin-bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.summary-card span {
+  color: #637083;
+}
+
+.summary-card strong {
+  font-size: 28px;
+  color: #111827;
+}
+
+.table-card {
+  padding: 20px;
+}
+
+.table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.table-toolbar h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.table-toolbar p {
+  margin: 0;
+  color: #637083;
+  font-size: 14px;
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.sort-buttons button,
+.pagination button {
+  border: 1px solid #cfd7e3;
+  background: white;
+  color: #172033;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.sort-buttons button:hover,
+.pagination button:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+.sort-buttons button.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e7ecf3;
+  text-align: left;
+}
+
+th {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #637083;
+  background: #f8fafc;
+}
+
+td:last-child,
+th:last-child {
+  text-align: right;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+.pagination {
+  padding-top: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.pagination span {
+  color: #637083;
+}
+
+.pagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.status-message {
+  background: white;
+  border: 1px solid #e1e6ef;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.error-box {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #9f1239;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.error-box h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 800px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .table-toolbar,
+  .summary-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sort-buttons {
+    justify-content: flex-start;
+  }
+}
+
+.value-cell {
+  position: relative;
+  min-width: 220px;
+  height: 28px;
+}
+
+.value-bar {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 18px;
+
+  background: #93c5fd;
+  border-radius: 4px;
+
+  opacity: 0.75;
+}
+
+.value-text {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  height: 28px;
+
+  font-weight: 600;
+}
